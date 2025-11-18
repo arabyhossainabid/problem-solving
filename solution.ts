@@ -96,8 +96,6 @@ function printBookDetails (book: Book){
   console.log(`title:${book.title} author:${book.author} publishedYear:${book.publishedYear} isAvailable:${Available}`);
 }
 
-
-
 // Problem 7
 
 function getUniqueValues <T>(arr1: T[], arr2: T[]){
@@ -120,17 +118,17 @@ function getUniqueValues <T>(arr1: T[], arr2: T[]){
 
     if(!exists(result,arr1[i])){
 
-      result.push(arr1[i]);
+       result[result.length] = arr1[i];
     }
   }
   for(let i = 0; i < arr2.length; i++){
 
     if(!exists(result, arr2[i])){
 
-      result.push(arr2[i]);
+       result[result.length] = arr2[i];
     }
   }
-    return result.sort((a: any, b: any) => a - b);
+    return result;
 };
 
 
